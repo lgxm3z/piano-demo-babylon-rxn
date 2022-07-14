@@ -1,0 +1,46 @@
+{
+  "name": "piano-demo",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react",
+      "**/react-dom",
+      "**/react-native",
+      "**/react-native/**",
+      "**/react-native-codegen",
+      "**/react-native-dev-menu"
+    ]
+  },
+  "scripts": {
+    "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock",
+    "mobile:start": "yarn workspace @piano-demo/mobile start",
+    "mobile:android": "yarn workspace @piano-demo/mobile android",
+    "mobile:android:studio": "yarn workspace @piano-demo/mobile android:studio",
+    "mobile:ios": "yarn workspace @piano-demo/mobile ios",
+    "mobile:ios:xcode": "yarn workspace @piano-demo/mobile ios:xcode",
+    "mobile:ios:pods": "yarn workspace @piano-demo/mobile ios:pods",
+    "web:start": "yarn workspace @piano-demo/web start",
+    "web:build": "yarn workspace @piano-demo/web build",
+    "lint": "ultra -r lint",
+    "lint:fix": "ultra -r lint:fix",
+    "test": "ultra -r test",
+    "typecheck": "ultra -r typecheck"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.7.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-react-app": "^6.2.2",
+    "eslint-plugin-react-native": "^3.11.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.4.2",
+    "ultra-runner": "^3.10.5"
+  }
+}
