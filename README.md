@@ -1,3 +1,3 @@
 # piano-demo-babylon-rxn
 
-🎹 [DEMO] Cross Platform BabylonJS 3D Piano built for React and React Native.
+🎹 [DEMO] Cross Platform BabylonJS 3D Piano built with React and React Native.
