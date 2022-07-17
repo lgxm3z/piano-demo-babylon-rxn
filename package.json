@@ -11,6 +11,7 @@
       "**/react-dom",
       "**/react-native",
       "**/react-native/**",
+      "**/react-native-web",
       "**/react-native-codegen",
       "**/react-native-dev-menu"
     ]
@@ -31,16 +32,16 @@
     "typecheck": "ultra -r typecheck"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.29.3",
-    "@typescript-eslint/parser": "^5.17.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-import-resolver-typescript": "^2.7.0",
-    "eslint-plugin-import": "^2.25.4",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.2.7",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react-app": "^6.2.2",
-    "eslint-plugin-react-native": "^3.11.0",
-    "prettier": "^2.3.2",
-    "typescript": "^4.4.2",
+    "eslint-plugin-react-native": "^4.0.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
     "ultra-runner": "^3.10.5"
   }
 }
