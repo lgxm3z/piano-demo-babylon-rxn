@@ -1,46 +1,58 @@
-const path = require("path");
+/* eslint-disable no-unused-vars */
+const webpack = require("webpack");
+const path = require('path')
 
-const webpack = require('webpack');
-const TerserPlugin = require('terser-webpack-plugin');
+const {
+  when,
+  whenDev,
+  whenProd,
+  whenTest,
+  ESLINT_MODES,
+  POSTCSS_MODES,
+  getLoader,
+  loaderByName,
+  getPlugin,
+  pluginByName
+} = require("@craco/craco");
 
-module.exports = {
+const {
+  getWebpackTools
+} = require("react-native-monorepo-tools");
+
+const monorepoWebpackTools = getWebpackTools();
+
+module.exports = function({
+  env
+}) {
+  return {
     babel: {
-        plugins: [["react-native-web", { commonjs: true }]],
-    },
-  webpack: {
-    configure: webpackConfig => {
-      // ts-loader is required to reference external typescript projects/files (non-transpiled)
-      webpackConfig.module.rules.push({
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/,
-        options: {
-          transpileOnly: true,
-          configFile: 'tsconfig.json',
-        },
-      })
-
-      return webpackConfig;
-    },
-    alias: {
-        'react-native$': 'react-native-web',
-      },
-    plugins: {
-      add: [
-        // Inject the "__DEV__" global variable.
-        new webpack.DefinePlugin({
-          __DEV__: process.env.NODE_ENV !== 'production',
-        }),
-        new TerserPlugin({
-          extractComments: false,
-          terserOptions: {
-            format: {
-              comments: false,
-            },
-          },
-        }),
+      plugins: [
+        ["module-resolver", {
+          "alias": {
+            "^react-native$": "react-native-web"
+          }
+        }]
       ],
-      remove: ["ManifestPlugin", "WorkboxWebpackPlugin", "WebpackManifestPlugin"]
-    }
+    },
+    webpack: {
+      configure: (webpackConfig) => {
+
+        // Allow importing from external workspaces.
+        monorepoWebpackTools.enableWorkspacesResolution(webpackConfig);
+        // Ensure nohoisted libraries are resolved from this workspace.
+        monorepoWebpackTools.addNohoistAliases(webpackConfig);
+
+        return webpackConfig;
+      },
+      plugins: {
+        add: [
+          // Inject the "__DEV__" global variable.
+          new webpack.DefinePlugin({
+            __DEV__: process.env.NODE_ENV !== "production",
+          }),
+        ],
+        remove: ["ManifestPlugin", "WorkboxWebpackPlugin", "WebpackManifestPlugin"]
+      }
+    },
   }
 };
