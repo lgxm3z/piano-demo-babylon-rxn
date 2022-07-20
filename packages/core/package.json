@@ -1,23 +1,20 @@
 {
   "name": "@piano-demo/core",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "",
   "private": true,
-  "main": "src",
+  "main": "index.tsx",
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "yarn lint --fix",
-    "test": "jest --passWithNoTests",
-    "test:watch": "yarn jest --watch",
-    "typecheck": "tsc"
+      "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@types/react": "^17.0.19",
-    "@types/react-native": "^0.64.13",
-    "typescript": "^4.6.4"
+      "@types/react": "^17.0.19",
+      "@types/react-native": "^0.64.13",
+      "typescript": "^4.6.4"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*",
-    "react-native-web": "*"
+      "react": "*",
+      "react-native": "*",
+      "react-native-web": "*"
   }
 }
