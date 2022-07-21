@@ -1,5 +1,5 @@
 {
-  "name": "piano-demo",
+  "name": "piano-demo-babylon-rxn",
   "private": true,
   "workspaces": {
     "packages": [

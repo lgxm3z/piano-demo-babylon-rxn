@@ -1,5 +1,5 @@
 {
-  "name": "@piano-demo/mobile",
+  "name": "@piano-demo-babylon-rxn/mobile",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@piano-demo/core": "*",
+    "@piano-demo-babylon-rxn/core": "*",
     "react": "18.0.0",
     "react-native": "0.69.1",
     "react-native-monorepo-tools": "^1.2.0"

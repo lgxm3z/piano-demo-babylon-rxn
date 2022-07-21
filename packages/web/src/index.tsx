@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "@piano-demo/core/src/App";
+import App from "@piano-demo-babylon-rxn/core/src/App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
