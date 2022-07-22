@@ -8,22 +8,27 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@babylonjs/core": "^5.14.1",
-    "@babylonjs/loaders": "^5.14.1",
+    "@babylonjs/core": "^5.16.0",
+    "@babylonjs/loaders": "^5.16.0",
     "@babylonjs/react-native": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.19",
     "@types/react-native": "^0.64.13",
+    "react-native-permissions": "*",
     "typescript": "^4.6.4"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
+    "react-native-permissions": "*",
     "react-native-web": "*"
   },
   "peerDependenciesMeta": {
     "react-native-web": {
+      "optional": true
+    },
+    "react-native-permissions": {
       "optional": true
     }
   }
