@@ -1,21 +1,41 @@
 import {
+  Color3,
   Color4,
   Engine,
+  HemisphericLight,
+  Material,
+  MeshBuilder,
+  MirrorTexture,
+  PBRSpecularGlossinessMaterial,
   Scene,
+  StandardMaterial,
   UniversalCamera,
   Vector3,
 } from "@babylonjs/core";
 import React, { useCallback } from "react";
 import { Text, View } from "react-native";
-import GLRenderer from "./components/GLRenderer";
+import WhiteKeyMesh from "./components/3D/Meshes/WhiteKeyMesh";
+import GLRenderer from "./components/UI/GLRenderer";
 
 export default function App() {
   const onCreateEngine = useCallback((engine: Engine | undefined) => {
     if (!engine) return;
 
     const scene = new Scene(engine);
-    scene.clearColor = Color4.FromHexString("#000000");
-    const camera = new UniversalCamera("Camera", new Vector3(0, 0, 0), scene);
+    scene.clearColor = Color4.FromHexString("#fcfcfc");
+    const camera = new UniversalCamera("camera", new Vector3(0, 5, -10), scene);
+    camera.setTarget(Vector3.Zero());
+
+    var light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
+
+    MeshBuilder.CreateBox
+    light.intensity = 0.7;
+    var cube = WhiteKeyMesh(scene);
+    var myMaterial = new StandardMaterial("myMaterial", scene);
+
+    myMaterial.ambientColor = new Color3(255, 255, 255);
+
+    cube.material = myMaterial;
 
     engine.runRenderLoop(function () {
       scene.render();
