@@ -32,8 +32,6 @@ const GLRenderer = ({onCreateEngine}: IProps) => {
 
   useEffect(() => {
     if (canvasRef.current) {
-      const logFunc = console.log;
-      console.log = () => true;
 
       engineRef.current = new Engine(canvasRef.current, true, {
         antialias: true,
@@ -41,12 +39,8 @@ const GLRenderer = ({onCreateEngine}: IProps) => {
         powerPreference: 'high-performance',
       });
 
-      engineRef.current.doNotHandleContextLost = true;
       handleResize();
 
-      Logger.ClearLogCache();
-
-      console.log = logFunc;
       onCreateEngine(engineRef.current);
     }
 
