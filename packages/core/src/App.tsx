@@ -1,5 +1,3 @@
-import '@babylonjs/loaders/glTF';
-
 import {
   Color3,
   Color4,
@@ -15,6 +13,9 @@ import {
   UniversalCamera,
   Vector3,
 } from "@babylonjs/core";
+
+import '@babylonjs/loaders';
+
 import React, { useCallback } from "react";
 import { Text, View } from "react-native";
 import GLRenderer from "./components/UI/GLRenderer";
@@ -205,8 +206,8 @@ export default function App() {
   }
   `;
   
-      SceneLoader.Append("", "data:"+ gltf, scene, function () { 
-        scene.meshes[0].position.set(0, 0, 0)
+    SceneLoader.Append("", "data:"+ gltf, scene, function () { 
+          scene.meshes[0].position.set(0, 0,0)
           scene.meshes[0].addRotation(0, 50, 0)
       });
 
