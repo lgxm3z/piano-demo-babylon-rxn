@@ -1,10 +1,11 @@
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
-import {Engine, Logger} from '@babylonjs/core';
 import {IProps} from '.';
 import {useWindowDimensions} from 'react-native';
 
+import {Engine, Logger} from '@babylonjs/core';
+
 const GLRenderer = ({onCreateEngine}: IProps) => {
-  Logger.LogLevels = Logger.NoneLogLevel;
+  //Logger.LogLevels = Logger.NoneLogLevel;
 
   const engineRef = useRef<Engine>();
   const canvasRef = useRef<HTMLCanvasElement>(null);
