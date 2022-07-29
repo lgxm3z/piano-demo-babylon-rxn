@@ -11,5 +11,3 @@ Technologies:
 - React Native Web
 - BabylonJS / BabylonReactNative
 - CRACO
-
-<img/>
