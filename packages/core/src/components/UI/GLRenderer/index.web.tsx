@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {IProps} from '.';
 import {useWindowDimensions} from 'react-native';

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import {
   Mesh,
   Nullable,
@@ -6,7 +7,7 @@ import {
   SceneLoader,
 } from "@babylonjs/core";
 
-var gltf = `{
+const gltf = `{
   "asset" : {
       "generator" : "Khronos glTF Blender I/O v3.2.43",
       "version" : "2.0"
